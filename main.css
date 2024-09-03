@@ -57,9 +57,10 @@ a
 .menu 
 {
   color: white;
-  width: 1500px;
+  width: 90%;
   overflow: hidden;
   margin: auto;
+  font-size: 30px;
 }
 
 .menu > li /* 바로 하위 태그만 해당 */
@@ -148,13 +149,13 @@ a
 
 .Hello
 {
-  animation : scale 3s infinite; 
+  animation : scale 2s infinite; 
 }
 
 @keyframes scale {
   0%, 100% 
   {
-      transform: scale(0.98); /* 원래 크기 */
+      transform: scale(0.90); /* 원래 크기 */
   }
   50% 
   {

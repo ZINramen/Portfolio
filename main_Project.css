@@ -54,13 +54,6 @@ a
   text-align: center;  
 }
 
-.menu 
-{
-  color: white;
-  width: 1500px;
-  overflow: hidden;
-  margin: auto;
-}
 
 .menu > li /* 바로 하위 태그만 해당 */
 {
