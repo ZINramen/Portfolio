@@ -67,6 +67,15 @@ a
   margin-bottom: 320px;
 }
 
+.menu 
+{
+  color: white;
+  width: 90%;
+  overflow: hidden;
+  margin: auto;
+  font-size: 30px;
+}
+
 .menu a 
 {
   color: #fff;
