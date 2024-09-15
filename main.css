@@ -8,7 +8,7 @@
 {
   margin-left: auto;
   margin-right: auto;
-  width: 500px;
+  width: 100%;
   margin-bottom: 100px;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
