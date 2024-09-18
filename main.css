@@ -225,7 +225,7 @@ a
 }
 
 
-@media (max-width:800px) 
+@media (max-width:700px) 
 {
   .vdBorder
   {
@@ -237,7 +237,7 @@ a
   }
 }
 
-@media (min-width:801px) 
+@media (min-width:701px) 
 {
   .vdBorder
   {
