@@ -72,7 +72,6 @@
 .grid-container
 {
   display: grid;
-  width: 900px; 
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: repeat(5, 1fr);
@@ -222,5 +221,31 @@ a
   {
     width: 80%;
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (max-width:800px) 
+{
+  .vdBorder
+  {
+    width: 90%;
+  }
+  .grid-container
+  {
+    width: 98%; 
+  }
+}
+
+@media (min-width:801px) 
+{
+  .vdBorder
+  {
+    width: 60%;
+  }
+  
+  .grid-container
+  {
+    width: 70%; 
   }
 }
