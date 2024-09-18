@@ -1,3 +1,15 @@
+.Menu_Item
+{
+  margin-right: 4%;
+}
+
+.Menu_List
+{
+  background-color: rgb(79, 79, 88);
+  font-size: 50%;
+  text-align: center;
+}
+
 .small_title
 {
   font-size: 30px;
