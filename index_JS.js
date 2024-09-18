@@ -9,6 +9,11 @@ const ytb = document.querySelector(".ytb")
 
 const origin_backgroundColor = back.style.backgroundColor
 
+const menu = document.querySelector(".Menu")
+const menuItems = document.querySelectorAll(".Menu_Item");
+const select = document.querySelectorAll(".small_title");
+var menuOpen = false;
+
 io.addEventListener("mouseenter", function()
 {
   back.style.backgroundColor = "rgb(50, 50, 50)" 
@@ -45,13 +50,50 @@ Lecture_Show.addEventListener("click", function()
     {
       Lecture_Heard.style.border = "3px solid rgb(67, 73, 66)";
       Lecture_Heard.style.boxShadow = "10px 10px 10px 1px rgb(10, 10, 10)";
-      Lecture_Heard.style.height = "500px"
+      Lecture_Heard.style.height = "500px";
     }
     else
     {
       Lecture_Heard.style.border = "0px solid rgb(67, 73, 66)";
       Lecture_Heard.style.boxShadow = "0px 0px 0px 0px";
-      Lecture_Heard.style.height = "0px"
+      Lecture_Heard.style.height = "0px";
     }
   }
+})
+
+menu.addEventListener("click", function()
+{
+  if(!menuOpen)
+  {
+    menuOpen = true;
+    menuItems.forEach(element => 
+    {
+      element.style = "margin-top: 20px;  margin-bottom: 20px; font-size: 60%;";
+    }); 
+  }
+  else
+  {
+    menuOpen = false;
+    menuItems.forEach(element => 
+    {
+      element.style = "margin-top: 0px;  margin-bottom: 0px; font-size: 0%;";
+    }); 
+  }
+})
+
+
+
+menuItems.forEach(element=>
+{
+  element.addEventListener("click", function()
+  {
+    const content = element.textContent;
+    select.forEach(element2=>
+    {
+      if(element2.textContent.includes(content))
+      {
+        element2.scrollIntoView({ behavior: 'smooth' });
+      }
+    })
+  })
 })
