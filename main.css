@@ -8,10 +8,9 @@
 {
   margin-left: auto;
   margin-right: auto;
-  width: 100%;
   margin-bottom: 100px;
+  width: 80%;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
   gap : 200px;
 }
 
@@ -232,5 +231,22 @@ a
   50% 
   {
       transform: scale(1); /* 1.5배 커짐 */
+  }
+}
+
+@media (max-width: 1200px)
+{
+  .ProjectBox_Grid
+  {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 1400px) 
+{
+  
+  .ProjectBox_Grid
+  {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
