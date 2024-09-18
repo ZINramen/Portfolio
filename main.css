@@ -1,3 +1,13 @@
+.namecard
+{
+  display:flex; 
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  margin-left: 30px; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
 .Menu:hover
 {
   scale: 120%;
@@ -38,7 +48,6 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 100px;
-  width: 50%;
   display: grid;
   gap : 200px;
 }
@@ -91,7 +100,8 @@ hr
 
 .Hello
 {
-  width: 80%;
+  width: 60%;
+  padding-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
   box-shadow:20px 30px 100px 0px black
@@ -219,7 +229,17 @@ a
   
   .ProjectBox_Grid
   {
-    width: 80%;
+    width: 90%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1500px) 
+{
+  
+  .ProjectBox_Grid
+  {
+    width: 60%;
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -235,6 +255,11 @@ a
   {
     width: 98%; 
   }
+  
+  .namecard
+  {
+    width: 50%; 
+  }
 }
 
 @media (min-width:800px) 
@@ -247,5 +272,10 @@ a
   .grid-container
   {
     width: 70%; 
+  }
+
+  .namecard
+  {
+    width: 40%; 
   }
 }
