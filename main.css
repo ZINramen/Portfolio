@@ -220,7 +220,7 @@ a
   
   .ProjectBox_Grid
   {
-    width: 60%;
+    width: 80%;
     grid-template-columns: repeat(2, 1fr);
   }
 }
