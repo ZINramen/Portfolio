@@ -12,7 +12,27 @@ const origin_backgroundColor = back.style.backgroundColor
 const menu = document.querySelector(".Menu")
 const menuItems = document.querySelectorAll(".Menu_Item");
 const select = document.querySelectorAll(".small_title");
+
+const view = document.querySelectorAll(".ProjectView");
+
 var menuOpen = false;
+
+if(sessionStorage.getItem("Scroll_Load") == 'true')
+{
+  sessionStorage.setItem('Scroll_Load', false);
+  window.scrollTo(0, sessionStorage.getItem('Current_Scroll_Value'));
+}
+
+view.forEach(e=>
+  {    
+    e.addEventListener("click", function()
+    { 
+      sessionStorage.setItem('Current_Scroll_Value', window.scrollY);
+      sessionStorage.setItem('Scroll_Load', true);
+    })
+  }
+)
+
 
 io.addEventListener("mouseenter", function()
 {
@@ -46,11 +66,11 @@ Lecture_Show.addEventListener("click", function()
 {
   if(Lecture_Heard != null)
   {
-    if(Lecture_Heard.style.height !="500px")
+    if(Lecture_Heard.style.height !="750px")
     {
       Lecture_Heard.style.border = "3px solid rgb(67, 73, 66)";
       Lecture_Heard.style.boxShadow = "10px 10px 10px 1px rgb(10, 10, 10)";
-      Lecture_Heard.style.height = "500px";
+      Lecture_Heard.style.height = "750px";
     }
     else
     {
