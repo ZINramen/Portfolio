@@ -30,6 +30,7 @@
 .Back
 {
   left: 2%;
+  width: 20%;
   position: fixed;  
   border-radius: 10px;
 }
