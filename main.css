@@ -1,3 +1,27 @@
+.YearBar
+{
+  left: 2%;
+  position: fixed;
+  color: white; 
+  border-radius: 10px;
+  height: 100px;
+  padding-top: auto;
+  padding-bottom: auto;
+  user-select: none; 
+}
+
+.Year
+{
+  color : #afafaf;
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: center; 
+  font-size: 70px; 
+  font-weight: 700; 
+  margin-top: 30px; 
+  border-radius: 10px;
+}
+
 .CenterAlign
 {
   margin-left: auto; 
@@ -6,7 +30,8 @@
 .Back
 {
   left: 2%;
-  position: fixed;
+  position: fixed;  
+  border-radius: 10px;
 }
 
 .Back:hover
@@ -80,7 +105,7 @@
   margin-right: auto;
   margin-bottom: 100px;
   display: grid;
-  gap : 200px;
+  max-width: 1200px;
 }
 
 .ProjectBox_Title
@@ -93,8 +118,6 @@
 
 .ProjectBox
 {
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 50px; width: 500px; height: auto; border: 3px solid black; overflow: hidden;
   border-radius: 10px;
   box-shadow: 10px 10px 10px black;
@@ -261,16 +284,6 @@ a
   .ProjectBox_Grid
   {
     width: 90%;
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1500px) 
-{
-  
-  .ProjectBox_Grid
-  {
-    width: 60%;
     grid-template-columns: repeat(2, 1fr);
   }
 }

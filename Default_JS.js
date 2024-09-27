@@ -17,22 +17,6 @@ const view = document.querySelectorAll(".ProjectView");
 
 var menuOpen = false;
 
-if(sessionStorage.getItem("Scroll_Load") == 'true')
-{
-  sessionStorage.setItem('Scroll_Load', false);
-  window.scrollTo(0, sessionStorage.getItem('Current_Scroll_Value'));
-}
-
-view.forEach(e=>
-  {    
-    e.addEventListener("mouseenter", function()
-    { 
-      sessionStorage.setItem('Current_Scroll_Value', window.scrollY);
-      sessionStorage.setItem('Scroll_Load', true);
-    })
-  }
-)
-
 if(back)
 {
   origin_backgroundColor = back.style.backgroundColor
