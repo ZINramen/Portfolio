@@ -9,13 +9,67 @@ const ytb = document.querySelector(".ytb")
 
 var origin_backgroundColor = null;
 
+const loading = document.querySelector(".Loading");
 const menu = document.querySelector(".Menu")
 const menuItems = document.querySelectorAll(".Menu_Item");
 const select = document.querySelectorAll(".small_title");
 
 const view = document.querySelectorAll(".ProjectView");
+const projectBox = document.querySelectorAll(".ProjectBox");
+const projectButton = document.querySelectorAll(".PROJECT_Button");
+
+const coins = document.querySelectorAll(".coin");
+
+const hidden = document.getElementById('hidden');
+
+function checkCoin()
+{ 
+  console.log(sessionStorage.getItem('coin'))
+  if(sessionStorage.getItem('coin') && sessionStorage.getItem('coin') == 7)
+  {
+    hidden.style.display = "block"
+  }
+}
+
+checkCoin();
+
+coins.forEach(coin=>
+  {
+    if(sessionStorage.getItem(coin.getAttribute('number')))
+    {
+      coin.style.display = "none"
+    }
+    else
+    {
+      coin.addEventListener("click", function()
+      {    
+        if(!sessionStorage.getItem('coin'))
+        {
+          sessionStorage.setItem('coin', 1)
+        }
+        else
+        {
+          sessionStorage.setItem('coin', parseInt(sessionStorage.getItem('coin'))+1)
+        }
+        const a = coin.querySelector('audio');
+        sessionStorage.setItem(coin.getAttribute('number'), true);
+        a.play();
+        coin.style.display = "none"
+        checkCoin();
+      })
+    }
+  }
+)
+
 
 var menuOpen = false;
+
+sessionStorage.setItem("idx", 0);
+
+window.onload = function()
+{
+  loading.style.display = "none";
+}
 
 if(sessionStorage.getItem("Scroll_Load") == 'true')
 {
@@ -32,6 +86,40 @@ view.forEach(e=>
     })
   }
 )
+
+projectBox.forEach(box=>
+  {    
+    box.addEventListener("mouseenter", function()
+    { 
+      box.querySelector(".PROJECT_Buttons").style.display = "block";
+    })
+    box.addEventListener("mouseleave", function()
+    { 
+      box.querySelector(".PROJECT_Buttons").style.display = "none";
+    })
+  }
+)
+
+projectButton.forEach(button=>
+  {    
+    button.addEventListener("mouseenter", function()
+    { 
+      button.style.boxShadow = "0px 0px 20px red";
+      button.style.cursor = "pointer";
+    })
+    button.addEventListener("mouseleave", function()
+    { 
+      button.style.boxShadow = "0px 0px 0px gray";
+      button.style.cursor = "default";
+    })
+    button.addEventListener("click", function()
+    {
+      window.open(this.getAttribute("href"), "_blank");
+    })
+  }
+)
+
+
 
 if(back)
 {
@@ -108,8 +196,6 @@ if(menu)
   })
 }
 
-
-
 if(menuItems)
 {
   menuItems.forEach(element=>
@@ -129,3 +215,45 @@ if(menuItems)
     })
   })
 }
+
+// 폰 번호 클릭했을 때 실행
+document.getElementById('Phone').addEventListener('click', function(){CopyText("전화번호", "01062905244");});
+
+// 메일 클릭했을 때 실행
+document.getElementById('Mail').addEventListener('click', function(){CopyText("메일", "dos9978@naver.com");});
+
+function CopyText(name, content) 
+{
+  // 텍스트 복사
+  navigator.clipboard.writeText(content).then(function() {
+      alert(name + " 복사 성공!");
+  }).catch(function(err) {
+      alert(name + " 복사 실패: " + err);
+  });
+}
+
+const audio = document.getElementById('myAudio');
+const trigger = document.querySelector('.trigger');
+const trigger2 = document.querySelector('.trigger2');
+const trigger3 = document.querySelector('.trigger3');
+
+window.addEventListener('scroll', () => {
+    const triggerPosition = trigger.getBoundingClientRect().bottom;
+    const triggerPosition2 = trigger2.getBoundingClientRect().bottom;
+    const triggerPosition3 = trigger3.getBoundingClientRect().bottom;
+
+    // 스크롤 위치가 특정 위치에 도달했는지 확인
+    if (triggerPosition3 <= window.innerHeight) {
+      document.body.style.backgroundImage = `url("/images/READ.gif")`;
+    }
+    else if (triggerPosition2 <= window.innerHeight) {
+      document.body.style.backgroundImage = `url("/images/skill.gif")`;
+    }
+    else if (triggerPosition <= window.innerHeight) {
+      document.body.style.backgroundImage = `url("/images/DEV.gif")`;
+    }
+    else
+    {
+      document.body.style.backgroundImage = `url("/images/hello.gif")`;
+    }
+});

@@ -3,6 +3,177 @@ html{
   user-select: none;
 }
 
+.mario
+{
+  display:flex; padding-top: 20%; padding-bottom:20%; margin-left: auto; margin-right:auto;
+  animation: dancing 0.5s linear infinite;
+}
+
+.study
+{
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  background-Color: rgba(44, 44, 44, 0.549);
+}
+
+.titleBox
+{
+  border-radius: 20px; 
+  display:flex; 
+  padding-left: 10px; 
+  background-Color: rgba(0, 0, 0, 0.549);
+}
+
+.frame
+{
+  border:2px solid white;
+  margin-right: 20px;
+  border-radius: 20px;
+}
+
+.contextBox
+{
+  width: 95%;
+  font-size:20px;
+  border-radius: 20px; 
+  padding-top: 20px;
+  padding-bottom: 20px; 
+  padding-left: 20px; 
+  padding-right: 20px;
+  background-Color: rgba(0, 0, 0, 0.549);
+}
+
+.ActivityBox
+{
+  margin-top: 20px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  font-size: 1vw;
+}
+
+.EventBoxListContainer
+{
+  width: 200px; 
+  height: 300px;
+  margin-left: 20px;
+  padding-right: 30px;
+}
+
+.EventBoxList
+{
+  height: 200px;
+  background-color: #0000005b;
+  border-radius: 25px;
+  padding-bottom: 50px;
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 30px;
+  border: 2px solid;
+}
+.EventBox
+{
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100px;
+  height: 160px;
+}
+
+.SceneLoad
+{
+  background-color: #000000;
+  width:200%;
+  height:100%;
+  z-index:998;
+  padding-top: 6%;
+  margin-left: -10px;
+  position: fixed;
+  display: none;
+  animation: aSceneLoad  1s linear;
+}
+
+.SceneLoad2
+{
+  background-color: #000000;
+  width:200%;
+  height:100%;
+  z-index:998;
+  padding-top: 6%;
+  margin-left: -10px;
+  position: fixed;
+  display: block;
+  animation: aSceneLoad 3s linear;
+  animation-fill-mode: forwards;
+}
+
+.Loading
+{
+  z-index:999;
+  position: fixed;
+  width:100%;
+  height:100%;
+  margin-top:-150px;
+  background: url("/images/RUN.gif") no-repeat center center;
+  background-color: #000000;
+  margin-left:-6px;
+  opacity: 1;
+}
+.PageButton:hover
+{
+  background-color:#f44040;
+  transition: background-color 0.1s linear;
+}
+
+.PageButton
+{
+  border-radius:25px; width:30px; height:100px;
+  text-align: center; 
+  padding-left:1%; padding-right:1%; 
+  padding-top: 80px; margin-top: auto; margin-bottom:auto; 
+  background-color:#8f3131
+}
+
+.ProjectView:hover
+{
+  opacity: 0.5;
+}
+
+.PublishingBox
+{
+  background-color: rgb(7, 7, 7);
+  width: 55%;
+  opacity: 1;
+  display: flex;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  justify-content: left;
+  flex-direction: column;
+  text-align: left;
+  text-size-adjust: 10px;
+}
+
+.careerBox
+{
+  background-color: rgb(41, 56, 41);
+  width: 1150px;
+  height: 700px;
+  opacity: 1;
+  display: flex;
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  justify-content: left;
+  text-align: left;
+  text-size-adjust: 10px;
+}
+
 .YearBar
 {
   left: 2%;
@@ -49,9 +220,13 @@ html{
 
 .description_title
 {
-  text-align: left; font-size: 40px; font-family: Galmuri11;
-  margin-top: 100px;
+  text-align: center; 
+  font-size: 40px;
   margin-bottom: 50px;
+  border: 4px solid rgb(255, 149, 0); 
+  color : rgb(255, 255, 255); 
+  border-radius:20px;
+  width: 30%;
 }
 
 .game_Screenshot
@@ -67,12 +242,19 @@ html{
 .namecard
 {
   display:flex; 
-  margin-top: 100px; 
+  border: 2px solid rgb(67, 67, 67);
+
   margin-bottom: 10px; 
   margin-left: 30px; 
   margin-left: auto; 
   margin-right: auto; 
-  width: 800px;
+  width: 100%;
+}
+
+.clickable-image:hover
+{
+  cursor: pointer;
+  box-shadow: 0 0 5px 5px rgba(240, 152, 21, 0.884);
 }
 
 .Menu:hover
@@ -110,6 +292,35 @@ html{
   text-align: center;
 }
 
+.PROJECT_Button
+{
+  border: 5px solid rgba(255, 255, 255, 0.822);
+  background-color: #73738b9c;
+  border-radius: 5px;
+  width: 60%;;
+  height: 12%;
+  display: flex;
+  margin-top: 13%;
+  margin-left: 20%;
+  justify-content: center;
+  align-items: center;
+}
+.PROJECT_Buttons
+{
+  display:none;
+  background: rgba(0, 0, 0, 0.733);
+  font-weight: 700;
+  width: 100%;
+  height: 105%;
+  text-align: center;
+  border-radius: 10px;
+  /* 상하좌우 정중앙 정렬하기 */
+  position: absolute;
+  left: 50%;
+  margin: 0% 0 0 -50%; /* 자식 요소 전체를 중앙 정렬하기 위해, 상단 및 왼쪽 margin을 마이너스 값으로 적용하기 */
+  z-index: 11;
+}
+
 .ProjectBox_Grid
 {
   margin-left: auto;
@@ -131,8 +342,7 @@ html{
 {
   margin-top: 50px; width: 500px; height: auto; border: 3px solid black; overflow: hidden;
   border-radius: 10px;
-  box-shadow: 10px 10px 10px black;
-  background-color: rgba(0, 0, 0, 0.192);
+  background-color: rgb(31, 31, 31);
 }
 
 .button-ShowLecture:hover
@@ -165,11 +375,9 @@ hr
 
 .Hello
 {
-  width: 60%;
-  padding-bottom: 30px;
+  width: 850px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow:20px 30px 100px 0px black
 }
 .expand-box:hover
 {
@@ -182,21 +390,18 @@ hr
   margin-left: auto;
   margin-right: auto;
   margin-top: 70px;
-  border: 4px solid rgb(109, 109, 109);
-  box-shadow:20px 30px 100px 0px black;
 }
 
 .MAINLOOP_video
 {
   width: 100%;
-  opacity: 0.5;
-  position: relative; /* position 속성 추가 */
+  height: 100%;
 }
 
 
 .title
 {
-  z-index: 9999; 
+  z-index: 998; 
   margin-top: auto;
   margin-left: -10px;
   position: fixed;
@@ -204,7 +409,7 @@ hr
   width: 100%;
   font-size: 40px;
   font-weight: 700;
-  color: white;
+  color: rgb(255, 255, 255);
   font-family: 'Galmurimono11', sans-serif;
   background-color: black;
   opacity: 0.8;
@@ -217,9 +422,10 @@ hr
 
 body
 {    
-  background-position: top center;
-  background-color: rgb(30, 32, 32);
-  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: url(images/hello.gif) no-repeat center right fixed; 
+  background-color: #151515;
 }
 
 
@@ -252,8 +458,7 @@ a
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 150px;
   color :rgb(220, 226, 223)
 }
 
@@ -266,6 +471,24 @@ a
 .Simple-Info div p
 {
   padding-left: 10px; padding-right: 10px;
+}
+
+.Me-Description
+{
+  color: rgb(255, 255, 255);
+  font-size: 120%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 100%;
+  height: 100%;
+  background-color: #000000a0;
+  position:absolute;
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+
 }
 
 
@@ -323,4 +546,101 @@ a
   {
     width: 80%; 
   }
+}
+
+.block {
+  position: relative;
+  margin: 150px auto 30px auto;
+  height: 100%px;
+  background: linear-gradient(0deg, #000, #272727);
+}
+
+.block:before, .block:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+    #0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes steam {
+  0% {
+    transition: 100% 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes aSceneLoad {
+  0%{
+    display: block;
+    background-color: #000000;
+    margin-top: -100px;
+ 
+    opacity: 1;
+  }
+  30%{
+    display: block;
+    background-color: #000000;
+    margin-top: -100px;
+    opacity: 1;
+  }
+  50%
+  { 
+    display: block;
+    background-color: #000000;
+    margin-top: -100px;
+    opacity: 0.5;
+  }
+
+  100% 
+  {  
+    display: none;
+    background-color: #000000;
+    margin-top: -100px;
+    opacity: 0;
+  }
+}
+
+@keyframes dancing
+{
+  0%
+  {
+    display:flex; padding-top: 20%; padding-bottom:20%; margin-left: auto; margin-right:auto;
+  }
+
+  20%
+  {
+    display:flex; padding-top: 20%; padding-bottom:20%; margin-left: auto; margin-right:auto;
+    transform: scale(1.5);
+  }
+  
+  50%
+  {
+    display:flex; padding-top: 20%; padding-bottom:20%; margin-left: auto; margin-right:auto;
+    transform: scale(1.5);
+  }
+
+  100%
+  {
+    display:flex; padding-top: 20%; padding-bottom:20%; margin-left: auto; margin-right:auto;
+    transform: scale(1.5);
+    opacity: 0.9;
+  }
+}
+
+
+.block:after {
+  filter: blur(50px);
 }
